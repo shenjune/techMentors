@@ -10,10 +10,6 @@ var db = require("../models");
 //THIS ROUTE WORKS! DON'T TOUCH IT!!!!
 module.exports = function(app) {
   app.get("/api/mentors", function(req, res) {
-<<<<<<< HEAD
-    //THIS ROUTE WORKS! DON'T TOUCH IT!!!!
-=======
->>>>>>> c9a9104087eaec704a3adc6a7194e56a12b48d78
     db.Mentors.findAll({
       }).then(function(dbMentor) {
         res.json(dbMentor);
@@ -57,19 +53,18 @@ module.exports = function(app) {
   //Post Mentor Information
   app.post("/api/mentors", function (req, res) {
     db.Mentors.create(req.body).then(function(dbMentor) {
+      // console.log("back end api route post new mentor: ", dbMentor);
       res.json(dbMentor);
     });
   })
 
-<<<<<<< HEAD
-=======
   app.get("/api/mentors", function (req, res) {
     db.Mentors.findAll({}).then(function(dbMentor) {
+      // console.log("back end api route find all mentors: ", dbMentor);
       res.json(dbMentor);
     });
   })
 
->>>>>>> c9a9104087eaec704a3adc6a7194e56a12b48d78
 //   The DELETE ROUTE WORKS. DON'T TOUCH IT!!!
 //Ability to delete Mentor information (not sure if this is correct, might not keep)
   app.delete("/api/mentors/:id", function(req, res) {

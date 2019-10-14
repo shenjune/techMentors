@@ -51,7 +51,7 @@
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <h5>Your name:</h5>
-            <input type="text" class="form-control" id="mentorName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="mentorName" placeholder="Your name" required>
             <div class="valid-feedback">
               Looks good!
                 </div>
@@ -64,15 +64,19 @@
             <div class="col-md-6 mb-3">
             <h5>What is your mentorship focus?</h5>
             <div class="custom-control custom-radio">
-                    <input type="radio" id="classAssignment" name="primaryHelp" class="custom-control-input">
+                    <input type="radio" id="classAssignment" name="primaryHelp" class="custom-control-input" value="Class Assignment">
                     <label class="custom-control-label" for="classAssignment">Class assignment</label>
                   </div>
                   <div class="custom-control custom-radio">
-                    <input type="radio" id="resume" name="primaryHelp" class="custom-control-input">
+                    <input type="radio" id="resume" name="primaryHelp" class="custom-control-input" value="Specific Coding Problem">
+                    <label class="custom-control-label" for="resume">Specific Coding Problem</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="resume" name="primaryHelp" class="custom-control-input" value="Resume/Personal Branding">
                     <label class="custom-control-label" for="resume">Resume/Personal Branding</label>
                   </div>
                   <div class="custom-control custom-radio">
-                        <input type="radio" id="jobPrep" name="primaryHelp" class="custom-control-input">
+                        <input type="radio" id="jobPrep" name="primaryHelp" class="custom-control-input" value="Job prep/Interview Questions">
                         <label class="custom-control-label" for="jobPrep">Job prep/Interview Questions</label>
                       </div>
         </div>
@@ -83,20 +87,20 @@
             <div class="col-md-6 mb-3">
             <h5>What boot camp institute did you graduate from?</h5>
             <div class="custom-control custom-radio">
-                    <input type="radio" id="trilogy" name="gradSchool" class="custom-control-input">
+                    <input type="radio" id="trilogy" name="gradSchool" class="custom-control-input" value="Trilogy Education Services">
                     <label class="custom-control-label" for="trilogy">Trilogy Education Services</label>
                   </div>
                   <div class="custom-control custom-radio">
-                    <input type="radio" id="codeFellows" name="gradSchool" class="custom-control-input">
+                    <input type="radio" id="codeFellows" name="gradSchool" class="custom-control-input" value="CodeFellows">
                     <label class="custom-control-label" for="codeFellows">CodeFellows</label>
                   </div>
                   <div class="custom-control custom-radio">
-                        <input type="radio" id="galvanize" name="gradSchool" class="custom-control-input">
-                        <label class="custom-control-label" for="galvanize">Galvanize Coding Bootcamp</label>
+                        <input type="radio" id="galvanize" name="gradSchool" class="custom-control-input" value="Galvanize">
+                        <label class="custom-control-label" for="galvanize">Galvanize</label>
                       </div>
                    <div class="custom-control custom-radio">
-                        <input type="radio" id="genAssem" name="gradSchool" class="custom-control-input">
-                        <label class="custom-control-label" for="genAssem">General Assembly-Seattle</label>
+                        <input type="radio" id="genAssem" name="gradSchool" class="custom-control-input" value="General Assembly">
+                        <label class="custom-control-label" for="genAssem">General Assembly</label>
                           </div>
         
     </div>
@@ -118,16 +122,16 @@
         <div class="form-row">
                 <div class="col-md-6 mb-3">
                 <h5>What time zone do you currently reside in?</h5>
-               <select class="chosen-select" id="tz"></select>
-                          <option value = "1"> UTC-11: Samoa Standard Time </option>
-                          <option value = "2"> UTC-10 Hawaii-Aleutian Standard Time (HST) </option>
-                          <option value = "3"> UTC-9 Alaska Standard Time (AKST) </option>
-                          <option value = "4"> UTC-8: Pacific Standard Time (PST) </option>
-                          <option value = "5"> UTC-7: Mountain Standard Time (MST) </option>
-                          <option value = "6"> UTC-6: Central Standard Time (CST) </option>
-                          <option value = "7"> UTC-5: Eastern Standard Time (EST) </option>
-                          <option value = "8"> UTC-4: Atlantic Standard Time (AST) </option>
-                          <option value = "9"> UTC+10: Chamorro Standard Time </option>
+               <select class="chosen-select" id="tz">
+                  <option value = "UTC-11: Samoa Standard Time">UTC-11: Samoa Standard Time</option>
+                  <option value = "UTC-10 Hawaii-Aleutian Standard Time (HST)">UTC-10 Hawaii-Aleutian Standard Time (HST)</option>
+                  <option value = "UTC-9 Alaska Standard Time (AKST)">UTC-9 Alaska Standard Time (AKST)</option>
+                  <option value = "UTC-8: Pacific Standard Time (PST)">UTC-8: Pacific Standard Time (PST)</option>
+                  <option value = "UTC-7: Mountain Standard Time (MST)">UTC-7: Mountain Standard Time (MST)</option>
+                  <option value = "UTC-6: Central Standard Time (CST)">UTC-6: Central Standard Time (CST)</option>
+                  <option value = "UTC-5: Eastern Standard Time (EST)">UTC-5: Eastern Standard Time (EST)</option>
+                  <option value = "UTC-4: Atlantic Standard Time (AST)">UTC-4: Atlantic Standard Time (AST)</option>
+                  <option value = "UTC+10: Chamorro Standard Time">UTC+10: Chamorro Standard Time</option>
                 </select>
                         </div>
                       </div>
@@ -147,7 +151,7 @@
 
           </form>
           <script src= "https://code.jquery.com/jquery-3.4.1.js"></script>
-          <script src="../assets/js/app.js"></script>
+          <script src="assets/js/app.js"></script>
                 
        </body>
 </html>
