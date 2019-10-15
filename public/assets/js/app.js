@@ -1,28 +1,35 @@
 
 $(document).ready(function(){
-$("#submitButton").on("click", function(event){
-  event.preventDefault();
-  var mentorName=$("#mentorName").val().trim();
-  var primaryHelp=$("input[name='primaryHelp']:checked").val();
-  var gradSchool=$("input[name='gradSchool']:checked").val();
-  var describe=$("#describe").val().trim();
 
-  var newMentor={
-    mentor_name: mentorName,
-    image_id: "",
-    primary_help: primaryHelp,
-    description: describe,
-    institute_graduated: gradSchool,
-    time_zone: "Select"
+  $("#submitButton").on("click", function(event){
 
-  }
-console.log(newMentor);
+    event.preventDefault();
 
-  $.ajax("/api/mentors",newMentor).then(function(mentorData){
-    console.log(mentorData);
-    console.log("SUCCESS!!!!!!!!!");
+    var mentorName=$("#mentorName").val().trim();
+    var primaryHelp=$("input[name='primaryHelp']:checked").val();
+    var gradSchool=$("input[name='gradSchool']:checked").val();
+    var describe=$("#describe").val().trim();
+    var timeZone= $("#tz").val();
+
+    var newMentor={
+      mentor_name: mentorName,
+      image_id: "",
+      primary_help: primaryHelp,
+      description: describe,
+      institute_graduated: gradSchool,
+      time_zone: timeZone
+    }
+    console.log(newMentor);
+
+    $.ajax({
+      type: "POST",
+      url: "/api/mentors",
+      data: newMentor
+    }).then(function(mentorData){
+      // console.log(mentorData);
+      console.log("SUCCESS!!!!!!!!!");
+    })
   })
-})
 
 }) 
 

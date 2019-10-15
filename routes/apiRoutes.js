@@ -53,12 +53,14 @@ module.exports = function(app) {
   //Post Mentor Information
   app.post("/api/mentors", function (req, res) {
     db.Mentors.create(req.body).then(function(dbMentor) {
+      // console.log("back end api route post new mentor: ", dbMentor);
       res.json(dbMentor);
     });
   })
 
   app.get("/api/mentors", function (req, res) {
     db.Mentors.findAll({}).then(function(dbMentor) {
+      // console.log("back end api route find all mentors: ", dbMentor);
       res.json(dbMentor);
     });
   })

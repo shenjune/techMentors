@@ -1,14 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
     var Mentor = sequelize.define("Mentors", {
       // Giving the Mentee model a name of type STRING
-      mentor_name: DataTypes.STRING,
-      image_id: DataTypes.STRING,
+      mentor_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      image_id: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       primary_help:  {
-        type: DataTypes.ENUM('Class Assignment', 'Specific Coding Problem', 'Job Prep/Interview Questions'), 
+        type: DataTypes.ENUM('Class Assignment', 'Specific Coding Problem', 'Job Prep/Interview Questions', 'Resume/Personal Branding'), 
         },
       description: DataTypes.TEXT,
       institute_graduated:  {
-      type: DataTypes.ENUM('Select','Trilogy Education Services', 'CodeFellows', 'Galvanize Coding Bootcamp', 'General Assembly', 'Not listed'),
+      type: DataTypes.ENUM('Select','Trilogy Education Services', 'CodeFellows', 'Galvanize', 'General Assembly', 'Not listed'),
       },
       //year_graduated: {
           //type: DataTypes.INTEGER,
