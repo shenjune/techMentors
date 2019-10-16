@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>techMentors</title>
+    <title>techMentors: Mentor Application</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,14 +12,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
 
 <!--Navigation Bar-->
 
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">techMentors: Seattle</a>
+      <a class="navbar-brand" href="#">techMentors</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,23 +35,24 @@
 
 <!--Mentor Application Form-->
 
+<form class="mentorApplication">
+
 <!--Header & Sub-header-->
-<div class="row" id="main">
+    <div class="row" id="main">
         <div class="col-12" id="intro">
           <h2>Thank you for your interest in mentoring!</h2>
-          <h5>Let's get you set up.</h5>
+          <h6>Let's get you set up.</h6>
         </div>
       </div>
-
+<br>
 <!--Start of Form-->
 
-
 <!--Your name-->
-<form class="needs-validation" id= "novalidate">
+
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <h5>Your name:</h5>
-            <input type="text" class="form-control" id="mentorName" placeholder="Your name" required>
+            <input type="text" class="form-control" id="mentorName" placeholder="" required>
             <div class="valid-feedback">
               Looks good!
                 </div>
@@ -76,8 +77,8 @@
                     <label class="custom-control-label" for="resume">Resume/Personal Branding</label>
                   </div>
                   <div class="custom-control custom-radio">
-                        <input type="radio" id="jobPrep" name="primaryHelp" class="custom-control-input" value="Job prep/Interview Questions">
-                        <label class="custom-control-label" for="jobPrep">Job prep/Interview Questions</label>
+                    <input type="radio" id="jobPrep" name="primaryHelp" class="custom-control-input" value="Job prep/Interview Questions">
+                    <label class="custom-control-label" for="jobPrep">Job prep/Interview Questions</label>
                       </div>
         </div>
     </div>
@@ -85,44 +86,47 @@
 
         <div class="form-row">
             <div class="col-md-6 mb-3">
-            <h5>What boot camp institute did you graduate from?</h5>
-            <div class="custom-control custom-radio">
+              <h5>What boot camp institute did you graduate from?</h5>
+                  <div class="custom-control custom-radio">
                     <input type="radio" id="trilogy" name="gradSchool" class="custom-control-input" value="Trilogy Education Services">
                     <label class="custom-control-label" for="trilogy">Trilogy Education Services</label>
                   </div>
+
                   <div class="custom-control custom-radio">
                     <input type="radio" id="codeFellows" name="gradSchool" class="custom-control-input" value="CodeFellows">
                     <label class="custom-control-label" for="codeFellows">CodeFellows</label>
                   </div>
+
                   <div class="custom-control custom-radio">
                         <input type="radio" id="galvanize" name="gradSchool" class="custom-control-input" value="Galvanize">
                         <label class="custom-control-label" for="galvanize">Galvanize</label>
                       </div>
-                   <div class="custom-control custom-radio">
+
+                  <div class="custom-control custom-radio">
                         <input type="radio" id="genAssem" name="gradSchool" class="custom-control-input" value="General Assembly">
                         <label class="custom-control-label" for="genAssem">General Assembly</label>
-                          </div>
+                      </div>
         
     </div>
 </div>
 
 <!--Describe yourself-->
-<div class="form-row">
-        <div class="col-md-6 mb-3">
-        <h5> Tell mentees about yourself. Describe how you can help them.</h5>
-        <form class="was-validated">
-            <div class="form-group">
+      <div class="form-row">
+          <div class="col-md-6 mb-3">
+          <h5> Tell mentees about yourself. Describe how you can help them.</h5>
+            <form class="was-validated">
+              <div class="form-group">
                 <label for="describe">Describe yourself here.</label>
                 <textarea class="form-control" id="describe" rows="3"></textarea>
               </div>
             </div>
-</div>
+        </div>
 <!--Time Zone question-->
 
         <div class="form-row">
-                <div class="col-md-6 mb-3">
-                <h5>What time zone do you currently reside in?</h5>
-               <select class="chosen-select" id="tz">
+            <div class="col-md-6 mb-3">
+              <h5>What time zone do you currently reside in?</h5>
+                <select class="chosen-select" id="tz">
                   <option value = "UTC-11: Samoa Standard Time">UTC-11: Samoa Standard Time</option>
                   <option value = "UTC-10 Hawaii-Aleutian Standard Time (HST)">UTC-10 Hawaii-Aleutian Standard Time (HST)</option>
                   <option value = "UTC-9 Alaska Standard Time (AKST)">UTC-9 Alaska Standard Time (AKST)</option>
@@ -133,26 +137,31 @@
                   <option value = "UTC-4: Atlantic Standard Time (AST)">UTC-4: Atlantic Standard Time (AST)</option>
                   <option value = "UTC+10: Chamorro Standard Time">UTC+10: Chamorro Standard Time</option>
                 </select>
-                        </div>
-                      </div>
+              </div>
+            </div>
 
     </div>
 </div>
 
-
  <!--Profile Pic-->
- <div class="form-row">
+    <div class="form-row">
         <div class="col-md-6 mb-3" id="profilePic">
         <h5> Lastly, add a picture of yourself. Help mentees put a face to your name.</h5>
       </div>
+  </div>
+
+<!--Submit Button-->
+
+    <div class="form-row">
+        <button type="button" class="btn btn-info" id= "submitButton">Submit My Mentor Profile</button>
+      </div>
+</form>
+
+        <script src= "https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="assets/js/app.js"></script>
 
 
-  <button type="button" class="btn btn-info" id= "submitButton"><b>Submit Your Mentor Profile</b></button>
-
-          </form>
-          <script src= "https://code.jquery.com/jquery-3.4.1.js"></script>
-          <script src="assets/js/app.js"></script>
                 
-       </body>
+    </body>
 </html>
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>techMentors</title>
+    <title>techMentors: Mentor List</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,47 +12,67 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body>
+
+<!--Navigation Bar-->
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">techMentors</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+        </li>
+      <span class="navbar-text">
+      </span>
+    </div>
+  </nav>
+
+<form class="mentorSelectors">
+
 <!--Header and Sub-heading-->
-        <div class="row" id="main">
-                <div class="col-12" id="intro">
-                  <h2>Let's find you a Mentor!</h2>
-                  <p>Use the 2 fields below to hone in on the right mentor.</p>
-                </div>
-              </div>
+
+
+      <div class="row" id="mentorHeadings">
+          <div class="col-12" id="intro">
+              <h2>Let's find a Mentor!</h2>
+              <p>Use the 2 fields below to hone in on the right mentor.</p>
+          </div>
+        </div>
 
 <!--Mentor Selectors/Dropdowns: Primary Help & Time Zone-->
-<div class="form-row">
 
-    <div class="dropdown">
 
-        <button onclick="primaryHelpButton()" class="dropbtn">I want help with:</button>
-        <div id="myDropdown" class="dropdown-content">
-                <option value = "1"> Class Assignments </option>
-                <option value = "2"> Resume/Personal Branding </option>
-                <option value = "3"> Job Prep/Interview Questions </option>
-        </div>
-      </div>
+        <div class="form-row">
+          <h5>I want help with: </h5>
+            <select class="chosen-select" id="selectPrimaryHelp">
+              <option value = "1"> Class Assignments </option>
+              <option value = "2"> Resume/Personal Branding </option>
+              <option value = "3"> Job Prep/Interview Questions </option>
+            </select>
 
-      <div class="dropdown">
-            <button onclick="timeZoneButton()" class="dropbtn">My time zone is:</button>
-            <div id="myDropdown" class="dropdown-content">
-                    <option value = "1"> UTC-11: Samoa Standard Time </option>
-                    <option value = "2"> UTC-10 Hawaii-Aleutian Standard Time (HST) </option>
-                    <option value = "3"> UTC-9 Alaska Standard Time (AKST) </option>
-                    <option value = "4"> UTC-8: Pacific Standard Time (PST) </option>
-                    <option value = "5"> UTC-7: Mountain Standard Time (MST) </option>
-                    <option value = "6"> UTC-6: Central Standard Time (CST) </option>
-                    <option value = "7"> UTC-5: Eastern Standard Time (EST) </option>
-                    <option value = "8"> UTC-4: Atlantic Standard Time (AST) </option>
-                    <option value = "9"> UTC+10: Chamorro Standard Time </option>
-            </div>
+        <h5>My time zone is:</h5>
+            <select class="chosen-select" id="selectTimeZone">
+              <option value = "1"> UTC-11: Samoa Standard Time </option>
+              <option value = "2"> UTC-10 Hawaii-Aleutian Standard Time (HST) </option>
+              <option value = "3"> UTC-9 Alaska Standard Time (AKST) </option>
+              <option value = "4"> UTC-8: Pacific Standard Time (PST) </option>
+              <option value = "5"> UTC-7: Mountain Standard Time (MST) </option>
+              <option value = "6"> UTC-6: Central Standard Time (CST) </option>
+              <option value = "7"> UTC-5: Eastern Standard Time (EST) </option>
+              <option value = "8"> UTC-4: Atlantic Standard Time (AST) </option>
+              <option value = "9"> UTC+10: Chamorro Standard Time </option>
+            </select>
+            
+        <button type="button" class="btn btn-info" id="submitForMentor">Find my Mentor!</button>
           </div>
-
-        </div>
+      </form>
     </body>
 </html>
 
-<script src="../assets/js/mentorList.js"></script>
+<script src="./assets/js/mentorList.js"></script>

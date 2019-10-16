@@ -31,9 +31,7 @@ $(document).ready(function(){
     })
   })
 
-}) 
-
-
+})
 
 //   getBase64(img).then(result => {
 //     $.ajax({
@@ -48,9 +46,9 @@ $(document).ready(function(){
 //     }).then(response => {
 //         pictureIdVal = response.public_id;
 //     }).then(() => {
-//         let newMentor;
+//         let newMentorPic;
 //         if ($("#species-confidence").val() === "-1") {
-//             newMentor = {
+//             newMentorPic = {
 //                 openId: userIdVal,
 //                 pictureId: pictureIdVal,
 //                 dateObs: dateObsVal,
@@ -78,4 +76,4 @@ $(document).ready(function(){
 //                 //speciesConfidence: $("#species-confidence").val()
 //             };
 //         }
-//         console.log(newMentor);
+//         console.log(newMentorPic);
