@@ -37,7 +37,6 @@
 
 <!--Header and Sub-heading-->
 
-
       <div class="row" id="mentorHeadings">
           <div class="col-12" id="intro">
               <h2>Let's find a Mentor!</h2>
@@ -51,28 +50,64 @@
         <div class="form-row">
           <h5>I want help with: </h5>
             <select class="chosen-select" id="selectPrimaryHelp">
-              <option value = "1"> Class Assignments </option>
-              <option value = "2"> Resume/Personal Branding </option>
-              <option value = "3"> Job Prep/Interview Questions </option>
+              <option value = "Class Assignment"> Class Assignment </option>
+              <option value = "Resume/Personal Branding"> Resume/Personal Branding </option>
+              <option value = "Job Prep/Interview Questions"> Job Prep/Interview Questions </option>
             </select>
 
         <h5>My time zone is:</h5>
             <select class="chosen-select" id="selectTimeZone">
-              <option value = "1"> UTC-11: Samoa Standard Time </option>
-              <option value = "2"> UTC-10 Hawaii-Aleutian Standard Time (HST) </option>
-              <option value = "3"> UTC-9 Alaska Standard Time (AKST) </option>
-              <option value = "4"> UTC-8: Pacific Standard Time (PST) </option>
-              <option value = "5"> UTC-7: Mountain Standard Time (MST) </option>
-              <option value = "6"> UTC-6: Central Standard Time (CST) </option>
-              <option value = "7"> UTC-5: Eastern Standard Time (EST) </option>
-              <option value = "8"> UTC-4: Atlantic Standard Time (AST) </option>
-              <option value = "9"> UTC+10: Chamorro Standard Time </option>
+              <option value = "UTC-11: Samoa Standard Time"> UTC-11: Samoa Standard Time </option>
+              <option value = "UTC-10 Hawaii-Aleutian Standard Time (HST)"> UTC-10 Hawaii-Aleutian Standard Time (HST) </option>
+              <option value = "UTC-9 Alaska Standard Time (AKST)"> UTC-9 Alaska Standard Time (AKST) </option>
+              <option value = "UTC-8: Pacific Standard Time (PST)"> UTC-8: Pacific Standard Time (PST) </option>
+              <option value = "UTC-7: Mountain Standard Time (MST)"> UTC-7: Mountain Standard Time (MST) </option>
+              <option value = "UTC-6: Central Standard Time (CST)"> UTC-6: Central Standard Time (CST) </option>
+              <option value = "UTC-5: Eastern Standard Time (EST)"> UTC-5: Eastern Standard Time (EST) </option>
+              <option value = "UTC-4: Atlantic Standard Time (AST)"> UTC-4: Atlantic Standard Time (AST) </option>
+              <option value = "UTC+10: Chamorro Standard Time"> UTC+10: Chamorro Standard Time </option>
             </select>
             
         <button type="button" class="btn btn-info" id="submitForMentor">Find my Mentor!</button>
           </div>
       </form>
+  <br>
+
+<!--The start of the template for the Mentor List results-->
+
+<!--Name of Mentor-->
+<div class = "container">
+    <div class="wrapper">
+        <div class="col-md-3" id="mentorPic">
+          <img src="http://placehold.it/150x150" alt="Placeholder" class="img-thumbnail">
+        </div>
+        <div class="col-md-9" id="mentorName">
+            <h6>Mentor:</h6>
+            </div>
+        <div class="col-md-9" id="primaryHelp">
+          <h6>What I can help with:</h6>
+          </div>
+          <div class="col-md-9" id="gradSchool">
+              <h6>I graduated from:</h6>
+            </div>
+          <div class="col-md-9" id="mentorTimeZone">
+              <h6>My time zone:</h6>
+              </div>
+          <div class="col-md-9" id="describe">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim, felis ut dictum tristique,
+            nibh erat feugiat libero, sit amet fringilla mauris velit in mi. Duis tempus felis vitae
+            felis vulputate pretium. 
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+      <script src= "https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="assets/js/mentorList.js"></script>
     </body>
 </html>
 
-<script src="./assets/js/mentorList.js"></script>
