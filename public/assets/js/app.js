@@ -10,70 +10,53 @@ $(document).ready(function(){
     var gradSchool=$("input[name='gradSchool']:checked").val();
     var describe=$("#describe").val().trim();
     var timeZone= $("#tz").val();
+    var img=$("#pic-file").prop("files")[0]; // <- this is how you grab a file input using jquery
 
-    var newMentor={
-      mentor_name: mentorName,
-      image_id: "",
-      primary_help: primaryHelp,
-      description: describe,
-      institute_graduated: gradSchool,
-      time_zone: timeZone
+
+    // this function converts the image to be uploaded to base64 format
+    var convertImgToBase64 = function(file) {
+      return new Promise(function(resolve, reject) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+          resolve(reader.result);
+        };
+        reader.onerror = reject;
+      })
     }
-    console.log(newMentor);
 
+    convertImgToBase64(img).then(function(result) {
     $.ajax({
-      type: "POST",
-      url: "/api/mentors",
-      data: newMentor
-    }).then(function(mentorData){
-      // console.log(mentorData);
-      console.log("SUCCESS!!!!!!!!!");
-    })
-  })
+        method: "POST",
+        url: "https://api.cloudinary.com/v1_1/dlmlwmn0z/image/upload",
+        data: {
+            file: result,
+            upload_preset: "ml_default",
+        }
+    }).then(function(response) {
+        pictureIdVal = response.public_id;
+    }).then(function() {
+        var newMentor = {
+          mentor_name: mentorName,
+          image_id: "",
+          primary_help: primaryHelp,
+          description: describe,
+          institute_graduated: gradSchool,
+          time_zone: timeZone,
+          image_id: pictureIdVal
+        };
+        $.ajax({
+          type: "POST",
+          url: "/api/mentors",
+          data: newMentor
+        }).then(function(mentorData){
+          console.log(mentorData);
+          alert("Thanks for signing up! You are now a mentor!");
+          location.reload();
+        })
+      })
 
+
+    });
+});
 })
-
-//   getBase64(img).then(result => {
-//     $.ajax({
-//         method: "POST",
-//         url: "https://api.cloudinary.com/v1_1/dlmlwmn0z/image/upload",
-//         data: {
-//             file: result,
-//             upload_preset: "default_preset",
-//             folder: userIdVal,
-//             tags: userIdVal + ", " + categoryVal + ", " +  dateObsVal,
-//         }
-//     }).then(response => {
-//         pictureIdVal = response.public_id;
-//     }).then(() => {
-//         let newMentorPic;
-//         if ($("#species-confidence").val() === "-1") {
-//             newMentorPic = {
-//                 openId: userIdVal,
-//                 pictureId: pictureIdVal,
-//                 dateObs: dateObsVal,
-//                 timeObs: $("#time-obs").val(),
-//                 latitude: window.userPin.position.lat(),
-//                 longitude: window.userPin.position.lng(),
-//                 category: categoryVal,
-//                 firstConfidence: $("#first-confidence").val(),
-//                 briefDescription: $("#brief-desc").val().trim(),
-//             };	
-//         } else {
-//            /// newObs = {
-//                //openId: userIdVal,
-//                 //pictureId: pictureIdVal,
-//                 //dateObs: dateObsVal,
-//                 //timeObs: $("#time-obs").val(),
-//                 //latitude: window.userPin.position.lat(),
-//                 //longitude: window.userPin.position.lng(),
-//                 //category: categoryVal,
-//                 //firstConfidence: $("#first-confidence").val(),
-//                 //briefDescription: $("#brief-desc").val().trim(),
-//                 //extendedDescription: $("#extended-desc").val().trim(),
-//                 //species: $("#species").val().trim(),
-//                 //speciesSciName: $("#species-sci-name").val().trim(),
-//                 //speciesConfidence: $("#species-confidence").val()
-//             };
-//         }
-//         console.log(newMentorPic);
